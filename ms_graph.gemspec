@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name          = 'ms_graph'
-  gem.version       = File.read('VERSION').delete("\n\r")
+  gem.version       = File.read('VERSION').strip
   gem.authors       = ['nov']
   gem.email         = ['nov@matake.jp']
 
@@ -14,7 +14,9 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem.require_paths = ['lib']
 
-  gem.add_development_dependency 'bundler', '~> 1.11'
-  gem.add_development_dependency 'rake', '~> 10.0'
-  gem.add_development_dependency 'rgem', '~> 3.0'
+  gem.add_runtime_dependency 'httpclient'
+  gem.add_runtime_dependency 'rack-oauth2'
+  gem.add_runtime_dependency 'multi_json'
+  gem.add_runtime_dependency 'activesupport'
+  gem.add_development_dependency 'rake'
 end
